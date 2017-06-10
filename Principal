@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <?php
+        
+        ?>
+    </body>
+    <style>
+        
+	.cuadro{
+		border: 10px solid blue;
+		height: 100px;
+                width: 100px;
+		background-color: #00CC00;
+                text-align:center;
+	}
+        
+        .etiqueta{
+            border: 5px solid blue;
+            height: 45px;
+            width: 400px;
+            background-color: #00CC00;
+            text-align:center;
+	}
+        
+        #boton{
+            height: 45px;
+            width: 400px; 
+	}     
+    </style>
+    
+    <script>
+    
+    function EvaluarTriki(){
+        
+        a=document.getElementById("boton1");
+        b=document.getElementById("boton2");
+        c=document.getElementById("boton3");
+        d=document.getElementById("boton4");
+        e=document.getElementById("boton5");
+        f=document.getElementById("boton6");
+        g=document.getElementById("boton7");
+        h=document.getElementById("boton8");
+        i=document.getElementById("boton9");
+        
+        valorA=a.value;
+        valorB=b.value;
+        valorC=c.value;
+        valorD=d.value;
+        valorE=e.value;
+        valorF=f.value;
+        valorG=g.value;
+        valorH=h.value;
+        valorI=i.value;
+        
+        $valoraviso=0;
+        
+        if(valorA===valorB && valorA===valorC){
+            $valoraviso=1;
+        };
+        
+        if(valorD===valorE && valorD===valorF){
+            $valoraviso=1;
+        };
+        
+        if(valorG===valorH && valorG===valorI){
+            $valoraviso=1;
+        };
+        
+        if(valorA===valorD && valorA===valorG){
+            $valoraviso=1;
+        };
+        
+        if(valorB===valorE && valorB===valorH){
+            $valoraviso=1;
+        };
+        
+        if(valorC===valorF && valorC===valorI){
+            $valoraviso=1;
+        };
+        
+        if(valorA===valorE && valorA===valorI){
+            $valoraviso=1;
+        };
+        
+        if(valorC===valorE && valorC===valorG){
+            $valoraviso=1;
+        };
+        
+        switch($valoraviso){
+            case  0:
+                aviso.value="AL PARECER ESTO ES UN EMPATE!";
+                break;
+            case 1:
+                aviso.value="AL PARECER TENEMOS UN GANADOR!";
+        }
+    }
+    
+</script>
+   
+    <form>
+    <center><label><FONT SIZE=30><FONT face="Arial">*TRES EN LÍNEA*</FONT></FONT></label></center>
+    <br>
+    <center><input type="text" value="" id="boton1" class="cuadro"> &nbsp &nbsp <input type="text" value="" id="boton2" class="cuadro"> &nbsp &nbsp <input type="text" value="" id="boton3" class="cuadro"></center>
+    <br>
+    <br>
+    <center><input type="text" value="" id="boton4" class="cuadro"> &nbsp &nbsp <input type="text" value="" id="boton5" class="cuadro"> &nbsp &nbsp <input type="text" value="" id="boton6" class="cuadro"></center>
+    <br>
+    <br>
+    <center><input type="text" value="" id="boton7" class="cuadro"> &nbsp &nbsp <input type="text" value="" id="boton8" class="cuadro"> &nbsp &nbsp <input type="text" value="" id="boton9" class="cuadro"></center>
+    <br>
+    <center><input type="button" value="EVALUAR" id="boton" onclick="EvaluarTriki()"></center>
+    <br>
+    <center><input type="text" value="" id="aviso" class="etiqueta"></center>
+    </form>
+</html>
